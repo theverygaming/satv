@@ -12,7 +12,7 @@ vid_tx: $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
 %.o: %.cpp
-	$(CXX) -o $@ -c $< $(CFLAGS)
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
 clean:
 	rm -rf vid_tx $(OBJS)
