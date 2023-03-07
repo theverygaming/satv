@@ -1,0 +1,3 @@
+*.o
+vid_tx
+.vscode/
