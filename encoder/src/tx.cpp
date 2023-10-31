@@ -10,7 +10,6 @@
 #define SYNC_LEVEL   (-1)
 #define IMAGE_MIN    (-0.5)
 #define IMAGE_MAX    (1)
-#define SPS          (100000)
 #define HSYNC_PIXELS (5)
 #define VSYNC_LINES  (10)
 
@@ -72,6 +71,7 @@ int main(int argc, char *argv[]) {
     image img(argv[1]);
 
     fprintf(stderr, "width: %zu height: %zu\n", img.get_width() + HSYNC_PIXELS, img.get_height() + VSYNC_LINES);
+    fprintf(stderr, "required SR for 1 FPS %zu\n", (img.get_width() + HSYNC_PIXELS) * (img.get_height() + VSYNC_LINES));
 
     for (size_t i = 0; i < VSYNC_LINES * (img.get_width() + HSYNC_PIXELS); i++) { // VSYNC
         putsample(SYNC_LEVEL);
